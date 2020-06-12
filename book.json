@@ -1,0 +1,12 @@
+{
+    "plugins":[
+        "image-captions",
+        "splitter",
+        "expandable-chapters-small",
+        "-mathjax",
+        "-lunr",
+        "-search",
+        "search-pro",
+        "localized-footer"
+    ]
+}
