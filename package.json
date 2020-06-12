@@ -1,0 +1,42 @@
+{
+  "name": "docment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "gitbook-plugin-disqus": "^0.1.0",
+    "gitbook-plugin-editlink": "^1.0.2",
+    "gitbook-plugin-expandable-chapters-small": "^0.1.7",
+    "gitbook-plugin-ga": "^1.0.1",
+    "gitbook-plugin-expandable-chapters": "^0.2.0",
+    "gitbook-plugin-image-captions": "^3.1.0",
+    "gitbook-plugin-search-pro": "^2.0.2",
+    "gitbook-plugin-localized-footer": "^0.3.1",
+    "gitbook-plugin-toggle-chapters": "^0.0.3",
+    "gitbook-plugin-sitemap": "^1.2.0",
+    "gitbook-plugin-splitter": "^0.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hensonChang/TestReadMe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hensonChang/TestReadMe/issues"
+  },
+  "homepage": "https://github.com/hensonChang/TestReadMe#readme",
+  "scripts": {
+
+          "build": "gitbook build ./content ./docs"
+
+  },  
+}
