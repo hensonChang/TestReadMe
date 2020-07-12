@@ -1,12 +1,25 @@
 {
-    "plugins":[
-        "image-captions",
-        "splitter",
-        "expandable-chapters-small",
-        "-mathjax",
-        "-lunr",
-        "-search",
-        "search-pro",
-        "localized-footer"
-    ]
+  "title": "讴歌智能管家App重构文档",
+  "language": "zh-hans",
+  "author": "Henson",
+  "links": {
+    "sidebar": {
+      "私有库目录": "http://172.28.24.128/Yesway-Framework-Project/SDK/"
+    }
+  },
+  "plugins": [
+    "-search",
+    "-lunr",
+    "-sharing",
+    "-livereload",
+    "code",
+    "flexible-alerts",
+    "chapter-fold",
+    "theme-comscore"
+  ],
+  "pluginsConfig": {
+  },
+  "structure": {
+    "readme": "README.md"
+  }
 }
