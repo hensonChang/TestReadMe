@@ -1,0 +1,2449 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>用户信息存取 · 讴歌智能管家App重构文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Henson">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="navbar、tabbar.html" />
+    
+    
+    <link rel="prev" href="支付组件.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://172.28.24.128/Yesway-Framework-Project/SDK/" target="_blank" class="custom-link">私有库目录</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    文档说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    公共组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="推送组件.html">
+            
+                <a href="推送组件.html">
+            
+                    
+                    推送组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="js交互组件.html">
+            
+                <a href="js交互组件.html">
+            
+                    
+                    js交互组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="定位服务组件.html">
+            
+                <a href="定位服务组件.html">
+            
+                    
+                    定位服务组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="网络请求组件.html">
+            
+                <a href="网络请求组件.html">
+            
+                    
+                    网络请求组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="分享组件.html">
+            
+                <a href="分享组件.html">
+            
+                    
+                    分享组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="支付组件.html">
+            
+                <a href="支付组件.html">
+            
+                    
+                    支付组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="用户信息存取.html">
+            
+                <a href="用户信息存取.html">
+            
+                    
+                    用户信息存取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="navbar、tabbar.html">
+            
+                <a href="navbar、tabbar.html">
+            
+                    
+                    navbar、tabbar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="高德地图.html">
+            
+                <a href="高德地图.html">
+            
+                    
+                    高德地图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="升级其他公共组件.html">
+            
+                <a href="升级其他公共组件.html">
+            
+                    
+                    升级其他公共组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Part2/">
+            
+                <a href="../Part2/">
+            
+                    
+                    APP启动生命周期
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Part2/引导页.html">
+            
+                <a href="../Part2/引导页.html">
+            
+                    
+                    引导页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Part2/检测新版本.html">
+            
+                <a href="../Part2/检测新版本.html">
+            
+                    
+                    检测新版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Part2/判断用户逻辑.html">
+            
+                <a href="../Part2/判断用户逻辑.html">
+            
+                    
+                    判断用户逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Part3/">
+            
+                <a href="../Part3/">
+            
+                    
+                    登录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Part3/车主用户登录.html">
+            
+                <a href="../Part3/车主用户登录.html">
+            
+                    
+                    车主用户登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Part3/意向用户登录.html">
+            
+                <a href="../Part3/意向用户登录.html">
+            
+                    
+                    意向用户登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Part4/">
+            
+                <a href="../Part4/">
+            
+                    
+                    意向用户
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Part4/车主用户登录.html">
+            
+                <a href="../Part4/车主用户登录.html">
+            
+                    
+                    意向用户订单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Part4/电子合同.html">
+            
+                <a href="../Part4/电子合同.html">
+            
+                    
+                    电子合同
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Part4/电子收据.html">
+            
+                <a href="../Part4/电子收据.html">
+            
+                    
+                    电子收据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Part4/车辆定金支付.html">
+            
+                <a href="../Part4/车辆定金支付.html">
+            
+                    
+                    车辆定金支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Part4/退出登录.html">
+            
+                <a href="../Part4/退出登录.html">
+            
+                    
+                    退出登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Part5/">
+            
+                <a href="../Part5/">
+            
+                    
+                    首页
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Part5/隐私协议弹框.html">
+            
+                <a href="../Part5/隐私协议弹框.html">
+            
+                    
+                    隐私协议弹框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Part5/版本更新内容弹框.html">
+            
+                <a href="../Part5/版本更新内容弹框.html">
+            
+                    
+                    版本更新内容弹框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Part5/公共活动弹框.html">
+            
+                <a href="../Part5/公共活动弹框.html">
+            
+                    
+                    公共活动弹框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../Part5/权限检测弹框.html">
+            
+                <a href="../Part5/权限检测弹框.html">
+            
+                    
+                    权限检测弹框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../Part5/天气、限行.html">
+            
+                <a href="../Part5/天气、限行.html">
+            
+                    
+                    天气、限行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../Part5/未读消息数量.html">
+            
+                <a href="../Part5/未读消息数量.html">
+            
+                    
+                    未读消息数量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../Part5/轮播图.html">
+            
+                <a href="../Part5/轮播图.html">
+            
+                    
+                    轮播图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../Part5/管家服务.html">
+            
+                <a href="../Part5/管家服务.html">
+            
+                    
+                    管家服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Part6/">
+            
+                <a href="../Part6/">
+            
+                    
+                    导航设定
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Part6/联系服务中心下发.html">
+            
+                <a href="../Part6/联系服务中心下发.html">
+            
+                    
+                    联系服务中心下发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Part6/导航履历.html">
+            
+                <a href="../Part6/导航履历.html">
+            
+                    
+                    导航履历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Part6/驾车导航+路径规划.html">
+            
+                <a href="../Part6/驾车导航+路径规划.html">
+            
+                    
+                    驾车导航+路径规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Part6/步行导航+路径规划.html">
+            
+                <a href="../Part6/步行导航+路径规划.html">
+            
+                    
+                    步行导航+路径规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../Part6/处理接收自定义消息逻辑.html">
+            
+                <a href="../Part6/处理接收自定义消息逻辑.html">
+            
+                    
+                    处理接收自定义消息逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Part7/">
+            
+                <a href="../Part7/">
+            
+                    
+                    保养券
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Part7/保养券列表.html">
+            
+                <a href="../Part7/保养券列表.html">
+            
+                    
+                    保养券列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Part7/保养券详情.html">
+            
+                <a href="../Part7/保养券详情.html">
+            
+                    
+                    保养券详情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Part7/电子凭证.html">
+            
+                <a href="../Part7/电子凭证.html">
+            
+                    
+                    电子凭证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Part8/">
+            
+                <a href="../Part8/">
+            
+                    
+                    维保履历
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Part8/维保履历列表.html">
+            
+                <a href="../Part8/维保履历列表.html">
+            
+                    
+                    维保履历列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Part8/服务评价.html">
+            
+                <a href="../Part8/服务评价.html">
+            
+                    
+                    服务评价
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Part9/">
+            
+                <a href="../Part9/">
+            
+                    
+                    车生活
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Part9/车辆控制.html">
+            
+                <a href="../Part9/车辆控制.html">
+            
+                    
+                    车辆控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Part9/PIN码修改跳转.html">
+            
+                <a href="../Part9/PIN码修改跳转.html">
+            
+                    
+                    PIN码修改跳转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../Part9/停车位置/DVR跳转.html">
+            
+                <a href="../Part9/停车位置/DVR跳转.html">
+            
+                    
+                    停车位置/DVR跳转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../Part9/附近停车/违章查询/找代驾/音乐/餐厅.html">
+            
+                <a href="../Part9/附近停车/违章查询/找代驾/音乐/餐厅.html">
+            
+                    
+                    附近停车/违章查询/找代驾/音乐/餐厅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Part10/">
+            
+                <a href="../Part10/">
+            
+                    
+                    特约店
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Part10/根据经纬度查询.html">
+            
+                <a href="../Part10/根据经纬度查询.html">
+            
+                    
+                    根据经纬度查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Part10/根据城市列表查询.html">
+            
+                <a href="../Part10/根据城市列表查询.html">
+            
+                    
+                    根据城市列表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Part10/根据特约店名称查询.html">
+            
+                <a href="../Part10/根据特约店名称查询.html">
+            
+                    
+                    根据特约店名称查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../Part10/设置/取消/更换最爱特约店.html">
+            
+                <a href="../Part10/设置/取消/更换最爱特约店.html">
+            
+                    
+                    设置/取消/更换最爱特约店
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../Part10/预约维保跳转（带参）.html">
+            
+                <a href="../Part10/预约维保跳转（带参）.html">
+            
+                    
+                    预约维保跳转（带参）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../Part10/导航到店.html">
+            
+                <a href="../Part10/导航到店.html">
+            
+                    
+                    导航到店
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Part11/">
+            
+                <a href="../Part11/">
+            
+                    
+                    预约维保
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Part11/选择特约店.html">
+            
+                <a href="../Part11/选择特约店.html">
+            
+                    
+                    选择特约店
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Part11/选择SA.html">
+            
+                <a href="../Part11/选择SA.html">
+            
+                    
+                    选择SA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../Part11/选择预约类型.html">
+            
+                <a href="../Part11/选择预约类型.html">
+            
+                    
+                    选择预约类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../Part11/输入个人信息.html">
+            
+                <a href="../Part11/输入个人信息.html">
+            
+                    
+                    输入个人信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../Part11/预约提示页.html">
+            
+                <a href="../Part11/预约提示页.html">
+            
+                    
+                    预约提示页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Part12/">
+            
+                <a href="../Part12/">
+            
+                    
+                    一键救援
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Part12/道路救援.html">
+            
+                <a href="../Part12/道路救援.html">
+            
+                    
+                    道路救援
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Part12/紧急救援.html">
+            
+                <a href="../Part12/紧急救援.html">
+            
+                    
+                    紧急救援
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Part13/">
+            
+                <a href="../Part13/">
+            
+                    
+                    智驾游
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../Part13/智驾游列表.html">
+            
+                <a href="../Part13/智驾游列表.html">
+            
+                    
+                    智驾游列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../Part13/智驾游详情.html">
+            
+                <a href="../Part13/智驾游详情.html">
+            
+                    
+                    智驾游详情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../Part13/点赞.html">
+            
+                <a href="../Part13/点赞.html">
+            
+                    
+                    点赞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../Part13/搜索.html">
+            
+                <a href="../Part13/搜索.html">
+            
+                    
+                    搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../Part13/分享.html">
+            
+                <a href="../Part13/分享.html">
+            
+                    
+                    分享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../Part13/智驾游发布.html">
+            
+                <a href="../Part13/智驾游发布.html">
+            
+                    
+                    智驾游发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../Part13/富文本编辑.html">
+            
+                <a href="../Part13/富文本编辑.html">
+            
+                    
+                    富文本编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" data-path="../Part13/删除、编辑智驾游.html">
+            
+                <a href="../Part13/删除、编辑智驾游.html">
+            
+                    
+                    删除、编辑智驾游
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../Part14/">
+            
+                <a href="../Part14/">
+            
+                    
+                    品牌关怀
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Part14/品牌关怀列表.html">
+            
+                <a href="../Part14/品牌关怀列表.html">
+            
+                    
+                    品牌关怀列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Part14/品牌关怀详情.html">
+            
+                <a href="../Part14/品牌关怀详情.html">
+            
+                    
+                    品牌关怀详情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../Part14/分享.html">
+            
+                <a href="../Part14/分享.html">
+            
+                    
+                    分享
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../Part15/">
+            
+                <a href="../Part15/">
+            
+                    
+                    我的消息
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../Part15/消息提醒.html">
+            
+                <a href="../Part15/消息提醒.html">
+            
+                    
+                    消息提醒
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../Part15/详情system.html">
+            
+                <a href="../Part15/详情system.html">
+            
+                    
+                    详情system
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../Part15/详情care.html">
+            
+                <a href="../Part15/详情care.html">
+            
+                    
+                    详情care
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="../Part15/详情care-1v1.html">
+            
+                <a href="../Part15/详情care-1v1.html">
+            
+                    
+                    详情care-1v1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" data-path="../Part15/详情care-maintenance.html">
+            
+                <a href="../Part15/详情care-maintenance.html">
+            
+                    
+                    详情care-maintenance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.6" data-path="../Part15/详情care-coupon.html">
+            
+                <a href="../Part15/详情care-coupon.html">
+            
+                    
+                    详情care-coupon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.7" data-path="../Part15/详情care-vehicleMaintainCare.html">
+            
+                <a href="../Part15/详情care-vehicleMaintainCare.html">
+            
+                    
+                    详情care-vehicleMaintainCare
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.8" data-path="../Part15/报警提醒.html">
+            
+                <a href="../Part15/报警提醒.html">
+            
+                    
+                    报警提醒
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.9" data-path="../Part15/详情alarm-trouble.html">
+            
+                <a href="../Part15/详情alarm-trouble.html">
+            
+                    
+                    详情alarm-trouble
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.10" data-path="../Part15/详情alarm-crashalarm.html">
+            
+                <a href="../Part15/详情alarm-crashalarm.html">
+            
+                    
+                    详情alarm-crashalarm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.11" data-path="../Part15/详情alarm-securityalarm.html">
+            
+                <a href="../Part15/详情alarm-securityalarm.html">
+            
+                    
+                    详情alarm-securityalarm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.12" data-path="../Part15/消息全选-删除操作.html">
+            
+                <a href="../Part15/消息全选-删除操作.html">
+            
+                    
+                    消息全选-删除操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.13" data-path="../Part15/未读标记及应用badge操作.html">
+            
+                <a href="../Part15/未读标记及应用badge操作.html">
+            
+                    
+                    未读标记及应用badge操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../Part16/">
+            
+                <a href="../Part16/">
+            
+                    
+                    睿视云镜-停车位置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../Part16/导航到停车位置.html">
+            
+                <a href="../Part16/导航到停车位置.html">
+            
+                    
+                    导航到停车位置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../Part16/showMap用户位置及停车位置.html">
+            
+                <a href="../Part16/showMap用户位置及停车位置.html">
+            
+                    
+                    showMap用户位置及停车位置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../Part17/">
+            
+                <a href="../Part17/">
+            
+                    
+                    睿视云镜-档案信息
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../Part17/全部照片列表.html">
+            
+                <a href="../Part17/全部照片列表.html">
+            
+                    
+                    全部照片列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../Part17/全部视频列表.html">
+            
+                <a href="../Part17/全部视频列表.html">
+            
+                    
+                    全部视频列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../Part17/安防视频列表.html">
+            
+                <a href="../Part17/安防视频列表.html">
+            
+                    
+                    安防视频列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.4" data-path="../Part17/批量下载.html">
+            
+                <a href="../Part17/批量下载.html">
+            
+                    
+                    批量下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.5" data-path="../Part17/批量删除.html">
+            
+                <a href="../Part17/批量删除.html">
+            
+                    
+                    批量删除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.6" data-path="../Part17/查看图片+查看视频.html">
+            
+                <a href="../Part17/查看图片+查看视频.html">
+            
+                    
+                    查看图片+查看视频
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../Part18/">
+            
+                <a href="../Part18/">
+            
+                    
+                    睿视云镜-基础信息
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../Part18/基础信息展示.html">
+            
+                <a href="../Part18/基础信息展示.html">
+            
+                    
+                    基础信息展示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../Part18/faq.html">
+            
+                <a href="../Part18/faq.html">
+            
+                    
+                    faq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" data-path="../Part18/流量充值.html">
+            
+                <a href="../Part18/流量充值.html">
+            
+                    
+                    流量充值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../Part19/">
+            
+                <a href="../Part19/">
+            
+                    
+                    睿视云镜-我的智驾
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../Part19/驾驶报告.html">
+            
+                <a href="../Part19/驾驶报告.html">
+            
+                    
+                    驾驶报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../Part19/排行榜.html">
+            
+                <a href="../Part19/排行榜.html">
+            
+                    
+                    排行榜
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" data-path="../Part19/行驶轨迹.html">
+            
+                <a href="../Part19/行驶轨迹.html">
+            
+                    
+                    行驶轨迹
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.4" data-path="../Part19/历史行程.html">
+            
+                <a href="../Part19/历史行程.html">
+            
+                    
+                    历史行程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../Part20/">
+            
+                <a href="../Part20/">
+            
+                    
+                    我的
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../Part20/用户信息存取.html">
+            
+                <a href="../Part20/用户信息存取.html">
+            
+                    
+                    用户信息存取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../Part20/服务及其有效期.html">
+            
+                <a href="../Part20/服务及其有效期.html">
+            
+                    
+                    服务及其有效期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../Part20/服务续费.html">
+            
+                <a href="../Part20/服务续费.html">
+            
+                    
+                    服务续费
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../Part21/">
+            
+                <a href="../Part21/">
+            
+                    
+                    用户信息（区分link、非link）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../Part21/头像.html">
+            
+                <a href="../Part21/头像.html">
+            
+                    
+                    头像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="../Part21/修改手机号.html">
+            
+                <a href="../Part21/修改手机号.html">
+            
+                    
+                    修改手机号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.3" data-path="../Part21/姓名、出生日期、性别、地区、联系电话等.html">
+            
+                <a href="../Part21/姓名、出生日期、性别、地区、联系电话等.html">
+            
+                    
+                    姓名、出生日期、性别、地区、联系电话等
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../Part22/">
+            
+                <a href="../Part22/">
+            
+                    
+                    车辆信息（区分link、非link）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../Part22/车牌号、型号、颜色、vin.html">
+            
+                <a href="../Part22/车牌号、型号、颜色、vin.html">
+            
+                    
+                    车牌号、型号、颜色、vin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../Part23/">
+            
+                <a href="../Part23/">
+            
+                    
+                    提醒开关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../Part23/10种提醒开关设置.html">
+            
+                <a href="../Part23/10种提醒开关设置.html">
+            
+                    
+                    10种提醒开关设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="../Part24/">
+            
+                <a href="../Part24/">
+            
+                    
+                    特约店设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.25.1" data-path="../Part24/导航到店.html">
+            
+                <a href="../Part24/导航到店.html">
+            
+                    
+                    导航到店
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.2" data-path="../Part24/预约维保跳转（带参+判断是否可提供维保服务）.html">
+            
+                <a href="../Part24/预约维保跳转（带参+判断是否可提供维保服务）.html">
+            
+                    
+                    预约维保跳转（带参+判断是否可提供维保服务）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.3" data-path="../Part24/更换SA.html">
+            
+                <a href="../Part24/更换SA.html">
+            
+                    
+                    更换SA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.4" data-path="../Part24/导航到店.html">
+            
+                <a href="../Part24/导航到店.html">
+            
+                    
+                    导航到店
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.5" data-path="../Part24/维保记录.html">
+            
+                <a href="../Part24/维保记录.html">
+            
+                    
+                    维保记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.6" data-path="../Part24/设置/修改最爱店.html">
+            
+                <a href="../Part24/设置/修改最爱店.html">
+            
+                    
+                    设置/修改最爱店
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="../Part25/">
+            
+                <a href="../Part25/">
+            
+                    
+                    维保订单
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.26.1" data-path="../Part25/列表.html">
+            
+                <a href="../Part25/列表.html">
+            
+                    
+                    列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.2" data-path="../Part25/订单详情.html">
+            
+                <a href="../Part25/订单详情.html">
+            
+                    
+                    订单详情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.3" data-path="../Part25/列表.html">
+            
+                <a href="../Part25/列表.html">
+            
+                    
+                    列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.4" data-path="../Part25/订单跟踪.html">
+            
+                <a href="../Part25/订单跟踪.html">
+            
+                    
+                    订单跟踪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.5" data-path="../Part25/取消/修改订单.html">
+            
+                <a href="../Part25/取消/修改订单.html">
+            
+                    
+                    取消/修改订单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="../Part26/">
+            
+                <a href="../Part26/">
+            
+                    
+                    服务包订单、续费订单
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.27.1" data-path="../Part26/列表.html">
+            
+                <a href="../Part26/列表.html">
+            
+                    
+                    列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27.2" data-path="../Part26/发票.html">
+            
+                <a href="../Part26/发票.html">
+            
+                    
+                    发票
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27.3" data-path="../Part26/二次付款.html">
+            
+                <a href="../Part26/二次付款.html">
+            
+                    
+                    二次付款
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="../Part27/">
+            
+                <a href="../Part27/">
+            
+                    
+                    PIN码管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.28.1" data-path="../Part27/PIN码修改.html">
+            
+                <a href="../Part27/PIN码修改.html">
+            
+                    
+                    PIN码修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28.2" data-path="../Part27/PIN码重置.html">
+            
+                <a href="../Part27/PIN码重置.html">
+            
+                    
+                    PIN码重置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="../Part28/">
+            
+                <a href="../Part28/">
+            
+                    
+                    优惠券
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.29.1" data-path="../Part28/优惠券列表.html">
+            
+                <a href="../Part28/优惠券列表.html">
+            
+                    
+                    优惠券列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.2" data-path="../Part28/详情展开.html">
+            
+                <a href="../Part28/详情展开.html">
+            
+                    
+                    详情展开
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="../Part29/">
+            
+                <a href="../Part29/">
+            
+                    
+                    设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.30.1" data-path="../Part29/清除缓存.html">
+            
+                <a href="../Part29/清除缓存.html">
+            
+                    
+                    清除缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30.2" data-path="../Part29/关于App.html">
+            
+                <a href="../Part29/关于App.html">
+            
+                    
+                    关于App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30.3" data-path="../Part29/常用城市.html">
+            
+                <a href="../Part29/常用城市.html">
+            
+                    
+                    常用城市
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30.4" data-path="../Part29/意见反馈.html">
+            
+                <a href="../Part29/意见反馈.html">
+            
+                    
+                    意见反馈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30.5" data-path="../Part29/关于App.html">
+            
+                <a href="../Part29/关于App.html">
+            
+                    
+                    关于App
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >用户信息存取</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5B58;&#x53D6;">&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5B58;&#x53D6;</h1>
+<h4 id="1&#x3001;user">1&#x3001;User</h4>
+<h5 id="1&#xFF09;&#x5B58;&#x50A8;">1&#xFF09;&#x5B58;&#x50A8;</h5>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;--&#x4FDD;&#x5B58;User</span>
+ACUserModel * userModel = [ACUserModel modelWithDictionary:response[<span class="hljs-string">@&quot;userinfo&quot;</span>]];
+userModel.isCarUserLogin = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">NSData</span> * userData = [<span class="hljs-built_in">NSKeyedArchiver</span> archivedDataWithRootObject:userModel];
+[HSUserDefaults doSetUserDefaults:userData withKey:kUserDefaultsForUser];
+<span class="hljs-comment">// &#x5355;&#x4F8B;</span>
+[ACUserProxy share].user = userModel;
+</code></pre>
+<h5 id="2&#xFF09;&#x8BFB;&#x53D6;">2&#xFF09;&#x8BFB;&#x53D6;</h5>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x4ECE;UserDefaults&#x8BFB;&#x53D6;</span>
+<span class="hljs-built_in">NSData</span> * userData = [HSUserDefaults getUserDefaultsWithKey:kUserDefaultsForUser];
+ACUserModel * userModel = [<span class="hljs-built_in">NSKeyedUnarchiver</span> unarchiveObjectWithData:userData];
+<span class="hljs-comment">// &#x4ECE;&#x5355;&#x4F8B;&#x8BFB;&#x53D6;</span>
+ACUserModel * userModel = [ACUserProxy share].user;
+</code></pre>
+<h4 id="2&#x3001;vehicle">2&#x3001;Vehicle</h4>
+<h5 id="1&#xFF09;&#x5B58;&#x50A8;">1&#xFF09;&#x5B58;&#x50A8;</h5>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;--&#x4FDD;&#x5B58;vehicle</span>
+ACVehicleModel * vehicleModel = [ACVehicleModel modelWithDictionary:response[<span class="hljs-string">@&quot;vehicle&quot;</span>]];
+<span class="hljs-built_in">NSData</span> * vehicleData = [<span class="hljs-built_in">NSKeyedArchiver</span> archivedDataWithRootObject:vehicleModel];
+[HSUserDefaults doSetUserDefaults:vehicleData withKey:kUserDefaultsForVehicle];
+<span class="hljs-comment">// &#x5355;&#x4F8B;</span>
+[ACVehicleProxy share].vehicle = vehicleModel;
+</code></pre>
+<h5 id="2&#xFF09;&#x8BFB;&#x53D6;">2&#xFF09;&#x8BFB;&#x53D6;</h5>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x4ECE;UserDefaults&#x8BFB;&#x53D6;</span>
+<span class="hljs-built_in">NSData</span> * vehicleData = [HSUserDefaults getUserDefaultsWithKey:kUserDefaultsForVehicle];
+ACVehicleModel * vehicleModel = [<span class="hljs-built_in">NSKeyedUnarchiver</span> unarchiveObjectWithData:vehicleData];
+<span class="hljs-comment">// &#x5355;&#x4F8B;</span>
+[ACVehicleProxy share].vehicle = vehicleModel;
+</code></pre>
+<h4 id="3&#x3001;mirror">3&#x3001;Mirror</h4>
+<h5 id="1&#xFF09;&#x5B58;&#x50A8;">1&#xFF09;&#x5B58;&#x50A8;</h5>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;--&#x4FDD;&#x5B58;mirror</span>
+ACMirrorModel * mirrorModel = [ACMirrorModel modelWithDictionary:response[<span class="hljs-string">@&quot;mirror&quot;</span>]];
+<span class="hljs-built_in">NSData</span> * mirrorData = [<span class="hljs-built_in">NSKeyedArchiver</span> archivedDataWithRootObject:mirrorModel];
+[HSUserDefaults doSetUserDefaults:mirrorData withKey:kUserDefaultsForMirror];
+<span class="hljs-comment">// &#x5355;&#x4F8B;</span>
+[ACMirrorProxy share].mirror = mirrorModel;
+</code></pre>
+<h5 id="2&#xFF09;&#x8BFB;&#x53D6;">2&#xFF09;&#x8BFB;&#x53D6;</h5>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x4ECE;UserDefaults&#x8BFB;&#x53D6;</span>
+<span class="hljs-built_in">NSData</span> * mirrorData = [HSUserDefaults getUserDefaultsWithKey:kUserDefaultsForMirror];
+ACMirrorModel * mirrirModel = [<span class="hljs-built_in">NSKeyedUnarchiver</span> unarchiveObjectWithData:mirrorData];
+<span class="hljs-comment">// &#x5355;&#x4F8B;</span>
+[ACMirrorProxy share].mirror = mirrirModel;
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="支付组件.html" class="navigation navigation-prev " aria-label="Previous page: 支付组件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="navbar、tabbar.html" class="navigation navigation-next " aria-label="Next page: navbar、tabbar">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"用户信息存取","level":"1.2.7","depth":2,"next":{"title":"navbar、tabbar","level":"1.2.8","depth":2,"path":"Part1/navbar、tabbar.md","ref":"Part1/navbar、tabbar.md","articles":[]},"previous":{"title":"支付组件","level":"1.2.6","depth":2,"path":"Part1/支付组件.md","ref":"Part1/支付组件.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","-lunr","-sharing","-livereload","code","flexible-alerts","chapter-fold","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code":{"copyButtons":true},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"chapter-fold":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Henson","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"讴歌智能管家App重构文档","language":"zh-hans","links":{"sidebar":{"私有库目录":"http://172.28.24.128/Yesway-Framework-Project/SDK/"}},"gitbook":"*"},"file":{"path":"Part1/用户信息存取.md","mtime":"2020-07-12T02:01:22.453Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-12T02:16:54.240Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
